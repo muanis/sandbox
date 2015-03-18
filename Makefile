@@ -16,6 +16,6 @@ fail: touchversion
 	exit 1
 
 touchversion:
-	@echo -n $(VERSION) > .version
+	@echo "$(VERSION)" > .version
 
 .PHONY: all
