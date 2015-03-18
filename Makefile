@@ -7,12 +7,15 @@ VERSION = 1.1.5
 SHA1 := $(shell git rev-list HEAD | head -1)
 REPO := 'personalization-repo.dev.use1.nytimes.com'
 
-success: 
+success: touchversion
 	@echo "success"
 	exit 0
 
-fail:
+fail: touchversion
 	@echo "fail"
 	exit 1
+
+touchversion:
+	@echo $(VERSION) > .version
 
 .PHONY: all
